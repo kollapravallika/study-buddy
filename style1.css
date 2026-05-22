@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0a4ea3;
+  padding: 15px 40px;
+  color: white;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar li {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 60px;
+  background: linear-gradient(135deg,#0a4ea3,#00b4d8);
+  color: white;
+}
+
+.hero img {
+  width: 300px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
+}
+
+.feature-card {
+  background: white;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.feature-card img {
+  width: 60px;
+}
+
+.courses {
+  padding: 40px;
+  text-align: center;
+}
+
+.course-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.course-card {
+  background: white;
+  padding: 20px;
+  width: 220px;
+  border-radius: 10px;
+}
+
+.course-card img {
+  width: 80px;
+}
+
+.papers, .ai, .careers {
+  padding: 40px;
+  background: white;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.ai input {
+  width: 60%;
+  padding: 10px;
+}
+
+.ai button {
+  padding: 10px 20px;
+  background: #0a4ea3;
+  color: white;
+  border: none;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #0a4ea3;
+  color: white;
+}

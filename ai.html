@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>StudyBuddy AI Chat</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:#f2f4f7;
+}
+
+nav{
+  background:#0b4fa3;
+  color:white;
+  padding:15px 40px;
+  font-size:18px;
+}
+
+.chat-box{
+  width:60%;
+  margin:40px auto;
+  background:white;
+  border-radius:8px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.15);
+  display:flex;
+  flex-direction:column;
+}
+
+.chat-header{
+  background:#0b4fa3;
+  color:white;
+  padding:15px;
+  text-align:center;
+  border-radius:8px 8px 0 0;
+}
+
+.chat-body{
+  height:300px;
+  padding:20px;
+  overflow-y:auto;
+}
+
+.msg-user{
+  text-align:right;
+  margin:10px 0;
+}
+.msg-user span{
+  background:#0b4fa3;
+  color:white;
+  padding:8px 12px;
+  border-radius:10px;
+  display:inline-block;
+}
+
+.msg-bot{
+  text-align:left;
+  margin:10px 0;
+}
+.msg-bot span{
+  background:#e9edf3;
+  padding:8px 12px;
+  border-radius:10px;
+  display:inline-block;
+}
+
+.chat-input{
+  display:flex;
+  border-top:1px solid #ddd;
+}
+
+.chat-input input{
+  flex:1;
+  padding:12px;
+  border:none;
+  outline:none;
+}
+
+.chat-input button{
+  background:#0b4fa3;
+  color:white;
+  border:none;
+  padding:12px 25px;
+  cursor:pointer;
+}nav{background:#0b4fa3;color:#fff;padding:15px 40px;display:flex;justify-content:space-between}
+nav a{color:#fff;margin-left:20px;text-decoration:none;font-size:14px}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+ <b>StudyBuddy AI Assistant</b>
+ <div>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="courses.html">Courses</a>
+  <a href="papers.html">Question Papers</a>
+  <a href="syllabus.html">Syllabus</a>
+  <a href="ai.html">AI Assistant</a>
+  <a href="internships.html">Internships</a>
+  <a href="jobs.html">Jobs</a>
+  <a href="feedback.html">Feedback</a>
+  <a href="contact.html">Contact</a>
+ </div>
+</nav>
+
+<div class="chat-box">
+  <div class="chat-header">
+    🤖 Ask StudyBuddy AI
+  </div>
+
+  <div class="chat-body" id="chat">
+    <div class="msg-bot">
+      <span>Hello 👋 Ask me anything about diploma subjects, exams, or careers.</span>
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="question" placeholder="Type your question here...">
+    <button onclick="getAnswer()">Ask</button>
+  </div>
+</div>
+
+<script>
+function getAnswer(){
+  let q = document.getElementById("question").value.toLowerCase();
+  let chat = document.getElementById("chat");
+
+  if(q.trim() === "") return;
+
+  // Show user question
+  chat.innerHTML += `<div class="msg-user"><span>${q}</span></div>`;
+  document.getElementById("question").value = "";
+
+  let answer = "Sorry, I don't understand. Please ask about diploma subjects, exams, or jobs.";
+
+  // QUESTION → ANSWER LOGIC
+  if(q.includes("mechanical")){
+    answer = "Mechanical diploma includes thermodynamics, SOM, manufacturing processes, CNC, and design.";
+  }
+  else if(q.includes("computer") || q.includes("cse")){
+    answer = "Computer Science diploma covers C programming, data structures, DBMS, web technologies, and basics of AI.";
+  }
+  else if(q.includes("electrical")){
+    answer = "Electrical diploma focuses on machines, power systems, PLC, renewable energy, and EV technology.";
+  }
+  else if(q.includes("exam")){
+    answer = "To prepare for exams, study lesson-wise notes and practice previous year question papers.";
+  }
+  else if(q.includes("job")){
+    answer = "Diploma holders can apply for Junior Engineer, Technician, Apprentice, and private sector jobs.";
+  }
+  else if(q.includes("internship")){
+    answer = "Internships help diploma students gain practical skills and improve job opportunities.";
+  }
+  else if(q.includes("syllabus")){
+    answer = "The syllabus is available semester-wise and subject-wise for all diploma courses.";
+  }
+
+  // Show AI answer
+  setTimeout(() => {
+    chat.innerHTML += `<div class="msg-bot"><span>${answer}</span></div>`;
+    chat.scrollTop = chat.scrollHeight;
+  }, 500);
+}
+</script>
+
+</body>
+</html>

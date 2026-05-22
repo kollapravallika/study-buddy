@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      width: 360px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #0d47a1;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .login {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .login a {
+      color: #8e24aa;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Sign Up</h2>
+    <p id="error" class="error"></p>
+
+    <form id="signupForm">
+      <input type="text" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+      <button type="submit">Create Account</button>
+    </form>
+
+    <div class="login">
+      Already have an account?
+      <a href="index.html">Login</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const password = document.getElementById("password").value.trim();
+      const confirm = document.getElementById("confirmPassword").value.trim();
+      const error = document.getElementById("error");
+
+      if (password !== confirm) {
+        error.textContent = "Passwords do not match";
+        return;
+      }
+
+      error.textContent = "";
+      alert("Account created!");
+      window.location.href = "index.html";
+    });
+  </script>
+
+</body>
+</html>

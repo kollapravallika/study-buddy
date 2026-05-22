@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<style>
+body{font-family:Arial;background:#f2f4f7}
+.box{width:360px;margin:100px auto;background:white;padding:30px;border-radius:8px}
+input,button{width:100%;padding:10px;margin:10px 0}
+button{background:#0b4fa3;color:white;border:none}
+.error{color:red}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Login</h2>
+
+  <input id="username" placeholder="Username">
+  <input id="password" type="password" placeholder="Password">
+
+  <button onclick="login()">Login</button>
+  <p id="msg" class="error"></p>
+
+  <p>New user?
+    <a href="signup.html">Sign Up</a>
+  </p>
+</div>
+
+<script>
+function login(){
+  let u = username.value.trim();
+  let p = password.value;
+
+  let savedUser = localStorage.getItem("sb_username");
+  let savedPass = localStorage.getItem("sb_password");
+
+  if(u === savedUser && p === savedPass){
+    // OPEN WEBSITE DIRECTLY
+    window.location.href = "index.html";
+  } else {
+    msg.innerText = "Invalid username or password";
+  }
+  
+}
+</script>
+
+</body>
+</html>

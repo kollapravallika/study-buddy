@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #0a4ea3;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.hero {
+  padding: 80px;
+  text-align: center;
+  background: linear-gradient(135deg,#0a4ea3,#00b4d8);
+  color: white;
+}
+
+.cards, .course-grid {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+}
+
+.card, .course-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.content {
+  padding: 40px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #0a4ea3;
+  color: white;
+}
